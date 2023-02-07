@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "v2/calculator/proto";
+
+message Request {
+  uint32 a = 1;
+  uint32 b = 2;
+}
+
+message Response { uint32 result = 1; }
+
+service CalculatorService {
+  rpc Sum(Request) returns (Response);
+  rpc Difference(Request) returns (Response);
+  rpc Multiply(Request) returns (Response);
+}
